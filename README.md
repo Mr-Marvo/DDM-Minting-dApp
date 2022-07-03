@@ -1,27 +1,17 @@
-# Bored Ape NFT Minting dApp ( Udemy The Fullstack Nft Minting Website Course)
-
-This a complete example of fullstack NFT minting dApp. **BoredApe** is built with the purpose of providing an _entry point for future NFT Minting Website_ projects.
-
-To see the demo check this link:
-
-[![vercel](https://img.shields.io/badge/vercel-5624d0?style=for-the-badge&logo=vercel&logoColor=white)](https://boredape-minting-dapp.vercel.app/)
-
-
-To better understand take my course:
-
-[![udemy](https://img.shields.io/badge/udemy-5624d0?style=for-the-badge&logo=udemy&logoColor=white)](https://www.udemy.com/course/the-fullstack-nft-minting-website-course/?referralCode=5C50F6A55E29FC7E0107)
+# NFT Minting dApp using ERC721
+This is a Testnet Minting dApp using Ethereum ERC721 Smart Contract.
 
 ## Installation
 
-You can use **the default BoredApe smart contract** and play with it or you can also put **your own smart contract** and make changes as needed. Remember to change `.env` file with your own variables.
+You can use **the default smart contract** and play with it or you can also put **your own smart contract** and make changes as needed. Remember to change `.env` file with your own variables.
 
-Use the default **BoredApe Smart Contract:**
+Use the default **Smart Contract:**
 
 ```bash
 
   # Clone the repository and change directory into it
-  git clone https://github.com/codingwithdidem/boredape-minting-dapp.git
-  cd boredape-nft-minting-dapp
+  git clone https://github.com/Mr-Marvo/DDM-Minting-dApp
+  cd minting-dapp
 
   npm install            # Download packages
   npm run dev            # Run the dev server
@@ -31,7 +21,7 @@ Use the default **BoredApe Smart Contract:**
 
 First of all change .env variables with yours. And update the `dapp.config.js` file according to your needs.
 
-If you want to make changes on BoredApe smart contract, you can find BoredApe.sol inside `/contracts`folder. After making changes you need to recompile your smart contract using `npx hardhat compile` command. It will recompile the smart contract and create & update `/artifacts` folder. Smart contract ABI is also in this folder.
+If you want to make changes on DidemRaffe smart contract, you can find DidemRaffe.sol inside `/contracts`folder. After making changes you need to recompile your smart contract using `npx hardhat compile` command. It will recompile the smart contract and create & update `/artifacts` folder. Smart contract ABI is also in this folder.
 
 After making changes you need to update the `scripts/whitelist.js` with your whitelisted users accounts and deploy & verify your smart contract on ethereum blockchain. Use the scripts I created for you
 to do that. You can find the _deploy_ & _verify_ scripts inside `/scripts`folder.
@@ -55,7 +45,7 @@ When you are done with making changes and your minting dapp is just as you wante
 To do that;
 
 - Make sure you changed all env variables with yours. And also for the network you need to chose ethereum mainnet.
-- Update `hardhat.config.js` so that as network option you use _mainnet_ not _rinkeby_. [hardhat](https://hardhat.org/tutorial/deploying-to-a-live-network.html)
+- Update `hardhat.config.js` so that as network option you use _mainnet_ not _rinkeby_. [hardhat tutorial](https://hardhat.org/tutorial/deploying-to-a-live-network.html)
 - While deploying your contract with hardhat you need to use mainnet as network-name
 
 ```bash
@@ -66,14 +56,20 @@ To do that;
   npx hardhat run scripts/verifyContract.js --network mainnet
 ```
 
-## Tech Stack
+## Learn More
 
-**Client:** React, TailwindCSS, web3.js
+You can learn more about Blockchain Development and web3 from my github. So please hit [Follow](https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2FMr-Marvo) button.
 
-**Server:** Alchemy, NextJS, Hardhat
+### Contact Me
 
-## Support
+If you want any support or If you have any project for me please feel free to contact me.\
+View [Github Profile](https://github.com/Mr-Marvo) for contact details.
 
-For support, email codingwithdidem@gmail.com
+If you like my project please hit the [star] button
+## ⭐ Give a Star
+## 💪 [Follow Me](https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2FMr-Marvo) 
+## ⚡ [Github](https://github.com/Mr-Marvo)
 
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/codewithdidem)
+
+## Happy Coding ♨
+devNishan
