@@ -29,7 +29,7 @@ export default function Mint() {
   const [isMinting, setIsMinting] = useState(false)
   const [onboard, setOnboard] = useState(null)
 
-  const [state, setState]  = useState(0);
+  const [price, setPrice]  = useState();
 
   useEffect(() => {
     setOnboard(initOnboard)
@@ -37,11 +37,12 @@ export default function Mint() {
 
   useEffect(() => {
     if (totalMinted <= 4) {
-      setState(0);
-    } else if(totalMinted <= 9){
-      setState(0.07);
+      setPrice(0);
+    } else if (totalMinted <= 9) {
+      setPrice(0.07);
     }else{
-      setState(0.075);
+      console.log('xxxx');
+      setPrice(0.075);
     }
   }, []);
 
@@ -238,7 +239,7 @@ export default function Mint() {
                     <p>Total</p>
 
                     <div className="flex items-center space-x-3">
-                      {state}
+                      {price}
                       <span className="text-gray-400">+ GAS</span>
                     </div>
                   </div>
