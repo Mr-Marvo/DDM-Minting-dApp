@@ -6,7 +6,7 @@ const whitelist = require('../scripts/whitelist.js')
 const web3 = createAlchemyWeb3(process.env.NEXT_PUBLIC_ALCHEMY_RPC_URL)
 import { config } from '../dapp.config'
 
-const contract = require('../artifacts/contracts/SPT4.sol/SPT4.json')
+const contract = require('../artifacts/contracts/SPT5.sol/SPT5.json')
 const nftContract = new web3.eth.Contract(contract.abi, config.contractAddress)
 
 // Calculate merkle root from the whitelist array
@@ -120,7 +120,7 @@ export const publicMint = async (mintAmount, totalMinted) => {
     'latest'
   )
 
-  if (totalMinted <= 5) {
+  if (totalMinted <= 3) {
 
     // Set up our Ethereum transaction
     const tx = {
@@ -156,7 +156,7 @@ export const publicMint = async (mintAmount, totalMinted) => {
       }
     }
 
-  } else if (totalMinted <= 10) {
+  } else if (totalMinted <= 8) {
 
     // Set up our Ethereum transaction
     const tx = {
@@ -192,7 +192,7 @@ export const publicMint = async (mintAmount, totalMinted) => {
       }
     }
 
-  } else if (totalMinted <= 15) {
+  } else{
 
     // Set up our Ethereum transaction
     const tx = {
@@ -201,40 +201,6 @@ export const publicMint = async (mintAmount, totalMinted) => {
       from: window.ethereum.selectedAddress,
       value: parseInt(
         web3.utils.toWei(String(config.lotThreePrice * mintAmount), 'ether')
-      ).toString(16), // hex
-      data: nftContract.methods.publicSaleMint(mintAmount).encodeABI(),
-      nonce: nonce.toString(16)
-    }
-
-    try {
-      const txHash = await window.ethereum.request({
-        method: 'eth_sendTransaction',
-        params: [tx]
-      })
-
-      return {
-        success: true,
-        status: (
-          <a href={`https://rinkeby.etherscan.io/tx/${txHash}`} target="_blank">
-            <p>✅ Check out your transaction on Etherscan:</p>
-            <p>{`https://rinkeby.etherscan.io/tx/${txHash}`}</p>
-          </a>
-        )
-      }
-    } catch (error) {
-      return {
-        success: false,
-        status: '😞 Smth went wrong:' + error.message
-      }
-    }
-  } else {
-    // Set up our Ethereum transaction
-    const tx = {
-      to: config.contractAddress,
-      gas: String(300000 * mintAmount),
-      from: window.ethereum.selectedAddress,
-      value: parseInt(
-        web3.utils.toWei(String(config.lotFourPrice * mintAmount), 'ether')
       ).toString(16), // hex
       data: nftContract.methods.publicSaleMint(mintAmount).encodeABI(),
       nonce: nonce.toString(16)

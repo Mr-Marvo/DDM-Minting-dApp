@@ -29,9 +29,21 @@ export default function Mint() {
   const [isMinting, setIsMinting] = useState(false)
   const [onboard, setOnboard] = useState(null)
 
+  const [state, setState]  = useState(0);
+
   useEffect(() => {
     setOnboard(initOnboard)
   }, [])
+
+  useEffect(() => {
+    if (totalMinted <= 3) {
+      setState(0);
+    } else if(totalMinted <= 8){
+      setState(1);
+    }else{
+      setState(2);
+    }
+  }, []);
 
   useEffect(() => {
     if (!connectedWallets.length) return
