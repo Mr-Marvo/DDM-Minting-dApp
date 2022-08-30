@@ -19,7 +19,7 @@ async function main() {
   const root = merkleTree.getRoot()
 
   // Deploy the contract
-  const DidemRaffe = await hre.ethers.getContractFactory('SPT3')
+  const DidemRaffe = await hre.ethers.getContractFactory('SPT4')
   const didemRaffe = await DidemRaffe.deploy(
     BASE_URI,
     root,
@@ -28,7 +28,7 @@ async function main() {
 
   await didemRaffe.deployed()
 
-  console.log('SPT3 deployed to:', didemRaffe.address)
+  console.log('SPT4 deployed to:', didemRaffe.address)
 }
 
 // We recommend this pattern to be able to use async/await everywhere
