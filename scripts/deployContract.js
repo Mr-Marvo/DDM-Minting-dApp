@@ -8,7 +8,7 @@ const { MerkleTree } = require('merkletreejs')
 const keccak256 = require('keccak256')
 const whitelist = require('./whitelist.js')
 
-const BASE_URI = 'ipfs://QmaV2499PWvHMGaGuQRnYB8ZjsoiyaoYjANuDXpAvUZ5qS/'
+const BASE_URI = 'ipfs://Qmc5Au6XVunKHgSDz1v7uopxoBdhqpZVoi75S8cWTnntQ1/'
 const proxyRegistryAddressRinkeby = '0xf57b2c51ded3a29e6891aba85459d600256cf317'
 const proxyRegistryAddressMainnet = '0xa5409ec958c83c3f309868babaca7c86dcb077c1'
 
@@ -19,7 +19,7 @@ async function main() {
   const root = merkleTree.getRoot()
 
   // Deploy the contract
-  const DidemRaffe = await hre.ethers.getContractFactory('DidemRaffe')
+  const DidemRaffe = await hre.ethers.getContractFactory('SPT3')
   const didemRaffe = await DidemRaffe.deploy(
     BASE_URI,
     root,
@@ -28,7 +28,7 @@ async function main() {
 
   await didemRaffe.deployed()
 
-  console.log('DidemRaffe deployed to:', didemRaffe.address)
+  console.log('SPT3 deployed to:', didemRaffe.address)
 }
 
 // We recommend this pattern to be able to use async/await everywhere

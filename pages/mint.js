@@ -108,10 +108,11 @@ export default function Mint() {
 
     setIsMinting(false)
   }
+  
   const publicMintHandler = async () => {
     setIsMinting(true)
 
-    const { success, status } = await publicMint(mintAmount)
+    const { success, status } = await publicMint(mintAmount, totalMinted)
 
     setStatus({
       success,
@@ -225,12 +226,7 @@ export default function Mint() {
                     <p>Total</p>
 
                     <div className="flex items-center space-x-3">
-                      <p>
-                        {Number.parseFloat(config.price * mintAmount).toFixed(
-                          2
-                        )}{' '}
-                        ETH
-                      </p>{' '}
+                      {config.preSalePrice}
                       <span className="text-gray-400">+ GAS</span>
                     </div>
                   </div>
