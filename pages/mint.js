@@ -41,10 +41,9 @@ export default function Mint() {
     } else if (totalMinted <= 9) {
       setPrice(0.07);
     }else{
-      console.log('xxxx');
       setPrice(0.075);
     }
-  }, []);
+  });
 
   useEffect(() => {
     if (!connectedWallets.length) return
