@@ -36,12 +36,12 @@ export default function Mint() {
   }, [])
 
   useEffect(() => {
-    if (totalMinted <= 3) {
+    if (totalMinted <= 4) {
       setState(0);
-    } else if(totalMinted <= 8){
-      setState(1);
+    } else if(totalMinted <= 9){
+      setState(0.07);
     }else{
-      setState(2);
+      setState(0.075);
     }
   }, []);
 
@@ -238,7 +238,7 @@ export default function Mint() {
                     <p>Total</p>
 
                     <div className="flex items-center space-x-3">
-                      {config.preSalePrice}
+                      {state}
                       <span className="text-gray-400">+ GAS</span>
                     </div>
                   </div>

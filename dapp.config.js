@@ -1,7 +1,7 @@
 const config = {
   title: 'SPT3',
   description: 'Mint Price Changer Check 3',
-  contractAddress: '0xCB4298dF41Ee353C47c1A610c36F47E75acA2a3D',
+  contractAddress: '0x673a938172B3EDD923644e52992c96B690500984',
   maxMintAmount: 5,
   presaleMaxMintAmount: 10,
   lotOnePrice: 0.00,
