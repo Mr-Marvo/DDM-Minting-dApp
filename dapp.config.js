@@ -1,9 +1,9 @@
 const config = {
-  title: 'SPT3',
-  description: 'Mint Price Changer Check 3',
-  contractAddress: '0x0aB990d16C599AF3aA9C511464d6EF8fE53466a9',
+  title: 'PeaceEagle',
+  description: 'This is a collection of eagles with 60% of Royalties going to support conflict relief in Ukraine',
+  contractAddress: '0xCd2a3EF89F1E89CFc9f40F1a6050D6E5453924A8',
   maxMintAmount: 5,
-  presaleMaxMintAmount: 10,
+  presaleMaxMintAmount: 5,
   lotOnePrice: 0.00,
   lotTwoPrice: 0.07,
   lotThreePrice: 0.075,

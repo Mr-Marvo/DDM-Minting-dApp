@@ -6,7 +6,7 @@ const whitelist = require('../scripts/whitelist.js')
 const web3 = createAlchemyWeb3(process.env.NEXT_PUBLIC_ALCHEMY_RPC_URL)
 import { config } from '../dapp.config'
 
-const contract = require('../artifacts/contracts/SPTF.sol/SPTF.json')
+const contract = require('../artifacts/contracts/PeaceEagle.sol/PeaceEagle.json')
 const nftContract = new web3.eth.Contract(contract.abi, config.contractAddress)
 
 // Calculate merkle root from the whitelist array
@@ -120,7 +120,7 @@ export const publicMint = async (mintAmount, totalMinted) => {
     'latest'
   )
 
-  if (totalMinted <= 4) {
+  if (totalMinted <= 249) {
 
     // Set up our Ethereum transaction
     const tx = {
@@ -156,7 +156,7 @@ export const publicMint = async (mintAmount, totalMinted) => {
       }
     }
 
-  } else if (totalMinted <= 9) {
+  } else if (totalMinted <= 499) {
 
     // Set up our Ethereum transaction
     const tx = {
